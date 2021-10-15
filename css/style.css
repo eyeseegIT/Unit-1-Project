@@ -1,0 +1,76 @@
+body {
+  --body-bg: white;
+  --btn-text-color: black;
+  --btn-bg-color: silver;
+  --light-dark-btn-bg: blue;
+  --light-dark-btn-color: white;
+  --light-dark-btn-content: "Dark Mode";
+  --grid-color: black;
+  --text-color: black;
+  --border-color: black;
+  background-color: var(--body-bg);
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+		Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body.dark {
+  --body-bg: #22232b;
+  --btn-text-color: black;
+  --btn-bg-color: silver;
+  --light-dark-btn-bg: green;
+  --color: var(--light-dark-btn-color);
+  --light-dark-btn-content: "Light Mode";
+  --grid-color: white;
+  --text-color: white;
+  --border-color: white;
+}
+
+h1, h2 {
+  text-align: center;
+  color: var(--text-color)
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: repeat(1, 10vmin);
+  grid-template-columns: repeat(3, 10vmin);
+  grid-gap: 0vmin;
+  justify-content: center;
+  color: var(--grid-color);
+}
+
+div {
+  border: 3px solid black;
+  font-size: 8vmin;
+  text-align: center;
+  vertical-align: middle;
+  justify-content: center;
+  border-color: var(--border-color);
+}
+
+#play-button {
+  width: 150px;
+  display: inline-block;
+  justify-content: center;
+  margin: 10px auto;
+  background-color: var(--btn-bg-color);
+  color: var(--btn-text-color);
+}
+
+#light-dark-button {
+  background-color: var(--light-dark-btn-bg);
+  background-image: var(--light-dark-btn-bg);
+  color: var(--light-dark-btn-color);
+  width: 100px;
+  height: 25px;
+}
+
+#light-dark-button::after {
+  border: none;
+  color: var(--inverted-btn-text-color);
+  content: var(--light-dark-btn-content);
+}
