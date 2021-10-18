@@ -5,14 +5,11 @@ body {
   --light-dark-btn-bg: blue;
   --light-dark-btn-color: white;
   --light-dark-btn-content: "Dark Mode";
-  /* --grid-color: black; */
   --text-color: black;
-  --border-color: black;
   background-image: url("https://i.postimg.cc/cCgz5zh0/slot.png");
   background-repeat: no-repeat;
   background-position: center center;
-  background-attachment: fixed;
-  background-size: 50%;
+  background-size: 500px;
   background-color: var(--body-bg);
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
 		Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -29,21 +26,17 @@ body.dark {
   --light-dark-btn-bg: green;
   --color: var(--light-dark-btn-color);
   --light-dark-btn-content: "Light Mode";
-  --grid-color: white;
   --text-color: white;
-  --border-color: white;
 }
 
 h1 {
   text-align: center;
   color: var(--text-color);
-  margin: 50px 0 0 0;
 }
 
 h2 {
   text-align: center;
-  color: var(--text-color);
-  margin-top: 215px; 
+  margin: 0 auto; 
 }
 
 .grid {
@@ -52,7 +45,6 @@ h2 {
   grid-template-columns: repeat(3, 10vmin);
   grid-gap: 0vmin;
   justify-content: center;
-  /* color: var(--grid-color); */
 }
 
 div {
@@ -61,18 +53,26 @@ div {
   text-align: center;
   vertical-align: middle;
   justify-content: center;
-  border-color: var(--border-color);
   border: none;
-  margin-top: 40px;
+}
+
+.balance {
+  color: blue;
+  /* border: 3px solid green; */
+}
+
+.balance > span {
+  color: palegoldenrod;
+  border: 2px dashed paleturquoise;
 }
 
 #play-button {
-  width: 150px;
+  width: 100px;
   display: inline-block;
   justify-content: center;
-  margin: 130px auto;
   background-color: var(--btn-bg-color);
   color: var(--btn-text-color);
+  margin: 0 auto;
 }
 
 #light-dark-button {
@@ -86,3 +86,29 @@ div {
 #light-dark-button::after {
   content: var(--light-dark-btn-content);
 } 
+
+@media only screen and (min-width: 1024px) {
+  body {
+    color: red;
+    /* grid-template-columns: 1fr 2fr;
+    grid-template-rows: 50px auto 30px;
+    grid-template-areas: 
+      "header header"
+      "side content"
+      "footer footer";
+  }
+  main {
+    background-color: black;
+  } */
+}
+
+/* @media only screen and (min-width: 768px) {
+  body {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 50px auto 30px;
+    grid-template-areas: 
+      "header header"
+      "side content"
+      "footer footer";
+  }
+} */
