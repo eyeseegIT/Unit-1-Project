@@ -8,6 +8,7 @@ const max = Math.floor(9)
 
 /*---------------------------- Variables (state) ----------------------------*/
 
+let coinBal = 5
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -17,6 +18,7 @@ const gameStatus = document.querySelector("#message")
 const playBtn = document.querySelector("#play-button")
 const lightDarkBtn = document.querySelector("#light-dark-button")
 const body = document.querySelector("body")
+const balance = document.querySelector("#balance")
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -35,13 +37,18 @@ function init() {
   for (let i = 0; i < reels.length; i++) {
     reels[i].innerHTML = "7"
   }
+  balance.innerHTML = `Balance: ${coinBal} Coins`
 }
 
 function playGame() {
-  for (let i = 0; i < reels.length; i++) {
-    reels[i].innerHTML = Math.floor(Math.random() * (max - min + 1) + min)
-  } 
-  checkWin()
+  if (coinBal > 0) {
+    for (let i = 0; i < reels.length; i++) {
+      reels[i].innerHTML = Math.floor(Math.random() * (max - min + 1) + min)
+    } 
+    checkWin()
+  } else {
+    gameStatus.textContent = `Play Again!`
+  }
 }
 
 function checkWin() {
@@ -51,10 +58,24 @@ function checkWin() {
     c = winCond[i][2]
     if (reels[a].innerHTML === reels[b].innerHTML && reels[b].innerHTML === reels[c].innerHTML) {
       gameStatus.textContent = `You win!`
+      win()
+      balance.innerHTML = `Balance: ${coinBal} coins`
     } else {
       gameStatus.textContent = `You lose!`
+      lose()
+      balance.innerHTML = `Balance: ${coinBal} coins`
     }
   } 
+}
+
+function lose() {
+  if (coinBal >= 1) {
+    coinBal--
+  }
+}
+
+function win() {
+  coinBal+=5
 }
 
 function toggleLightDark() {

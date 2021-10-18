@@ -56,12 +56,13 @@ div {
   border: none;
 }
 
-.balance {
+#balance {
   color: blue;
+  text-align: center;
   /* border: 3px solid green; */
 }
 
-.balance > span {
+#balance > span {
   color: palegoldenrod;
   border: 2px dashed paleturquoise;
 }
