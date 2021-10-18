@@ -5,6 +5,8 @@ body {
   --light-dark-btn-bg: blue;
   --light-dark-btn-color: white;
   --light-dark-btn-content: "Dark Mode";
+  --rules-btn-bg-color: green;
+  --rules-btn-bg-text-color: white;
   --text-color: black;
   background-image: url("https://i.postimg.cc/cCgz5zh0/slot.png");
   background-repeat: no-repeat;
@@ -24,9 +26,11 @@ body.dark {
   --btn-text-color: black;
   --btn-bg-color: silver;
   --light-dark-btn-bg: green;
-  --color: var(--light-dark-btn-color);
+  --color: white;
   --light-dark-btn-content: "Light Mode";
   --text-color: white;
+  --rules-btn-bg-color: blue;
+  --rules-btn-bg-text-color: white;
 }
 
 h1 {
@@ -62,11 +66,6 @@ div {
   /* border: 3px solid green; */
 }
 
-#balance > span {
-  color: palegoldenrod;
-  border: 2px dashed paleturquoise;
-}
-
 #play-button {
   width: 100px;
   display: inline-block;
@@ -78,7 +77,6 @@ div {
 
 #light-dark-button {
   background-color: var(--light-dark-btn-bg); 
-  background-image: var(--light-dark-btn-bg);
   color: var(--light-dark-btn-color);
   width: 100px;
   height: 25px;
@@ -87,6 +85,28 @@ div {
 #light-dark-button::after {
   content: var(--light-dark-btn-content);
 } 
+
+#rules-button {
+  width: 100px;
+  height: 25px;
+  background-color: var(--rules-btn-bg-color); 
+  color: var(--rules-btn-bg-text-color);
+}
+
+#rules-button > span {
+  visibility: hidden;
+  width: 200px;
+  background-color: black;
+  color: #fff;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+}
+
+#rules-button:hover > span {
+  visibility: visible;
+}
 
 @media only screen and (min-width: 1024px) {
   body {

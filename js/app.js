@@ -8,7 +8,7 @@ const max = Math.floor(9)
 
 /*---------------------------- Variables (state) ----------------------------*/
 
-let coinBal = 5
+let coinBal = 10
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -47,7 +47,7 @@ function playGame() {
     } 
     checkWin()
   } else {
-    gameStatus.textContent = `Play Again!`
+    gameStatus.textContent = `You're broke! Come back next time!`
   }
 }
 
