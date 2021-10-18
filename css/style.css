@@ -5,17 +5,14 @@ body {
   --light-dark-btn-bg: blue;
   --light-dark-btn-color: white;
   --light-dark-btn-content: "Dark Mode";
-  --grid-color: black;
+  /* --grid-color: black; */
   --text-color: black;
   --border-color: black;
-  background-image: url(https://i.postimg.cc/25W38sZb/360-F-31373364-b-CIFT5-H9r-Tb-Xg-Va-ZRYui-EDh-A2-Pb-Yda-E5.jpg);
+  background-image: url("https://i.postimg.cc/cCgz5zh0/slot.png");
   background-repeat: no-repeat;
   background-position: center center;
-  /*background-size: sizes the image 20px across and 40px down the page */;
-  /* -webkit-background-size: cover;  
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; */
+  background-attachment: fixed;
+  background-size: 50%;
   background-color: var(--body-bg);
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
 		Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -37,9 +34,16 @@ body.dark {
   --border-color: white;
 }
 
-h1, h2 {
+h1 {
   text-align: center;
   color: var(--text-color);
+  margin: 50px 0 0 0;
+}
+
+h2 {
+  text-align: center;
+  color: var(--text-color);
+  margin-top: 215px; 
 }
 
 .grid {
@@ -48,8 +52,7 @@ h1, h2 {
   grid-template-columns: repeat(3, 10vmin);
   grid-gap: 0vmin;
   justify-content: center;
-  color: var(--grid-color);
-  margin: 150px;
+  /* color: var(--grid-color); */
 }
 
 div {
@@ -60,19 +63,20 @@ div {
   justify-content: center;
   border-color: var(--border-color);
   border: none;
+  margin-top: 40px;
 }
 
 #play-button {
   width: 150px;
   display: inline-block;
   justify-content: center;
-  margin: 10px auto;
+  margin: 130px auto;
   background-color: var(--btn-bg-color);
   color: var(--btn-text-color);
 }
 
 #light-dark-button {
-  background-color: var(--light-dark-btn-bg);
+  background-color: var(--light-dark-btn-bg); 
   background-image: var(--light-dark-btn-bg);
   color: var(--light-dark-btn-color);
   width: 100px;
@@ -80,7 +84,5 @@ div {
 }
 
 #light-dark-button::after {
-  border: none;
-  color: var(--inverted-btn-text-color);
   content: var(--light-dark-btn-content);
-}
+} 

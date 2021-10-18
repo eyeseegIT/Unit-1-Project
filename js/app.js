@@ -31,11 +31,10 @@ init()
 checkDarkPref()
 
 function init() {
-  gameStatus.innerHTML = "Click Play to start spinning!"
+  gameStatus.innerHTML = "Click Play to start!"
   for (let i = 0; i < reels.length; i++) {
     reels[i].innerHTML = "7"
   }
-  playGame()
 }
 
 function playGame() {
