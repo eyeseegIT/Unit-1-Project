@@ -145,28 +145,10 @@ h3 {
   visibility: visible;
 }
 
-@media only screen and (min-width: 1024px) {
-  body {
-    color: red;
-    /* grid-template-columns: 1fr 2fr;
-    grid-template-rows: 50px auto 30px;
-    grid-template-areas: 
-      "header header"
-      "side content"
-      "footer footer";
-  }
-  main {
-    background-color: black;
-  } */
-}
+/* @media only screen and (min-width: 1024px) {
+  
+} */
 
 /* @media only screen and (min-width: 768px) {
-  body {
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 50px auto 30px;
-    grid-template-areas: 
-      "header header"
-      "side content"
-      "footer footer";
-  }
+  
 } */

@@ -22,6 +22,8 @@ const balance = document.querySelector("#balance")
 const betAmt = document.querySelector("#bet-amt")
 const confirmBtn = document.querySelector("#confirm-btn")
 const resetBtn = document.querySelector("#reset-btn")
+const coinSound = new Audio("../audio/coin.mp3")
+const reelSound = new Audio("../audio/reelplay.mp3")
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -44,11 +46,13 @@ function init() {
   for (let i = 0; i < reels.length; i++) {
     reels[i].innerHTML = "7"
   }
-  balance.innerHTML = `Balance: ${coinBal} Coins`
+  balance.innerHTML = `Balance: ${coinBal} coins`
 }
 
 function confirm() {
   if (betAmt.value !== "") {
+    coinSound.volume = .20
+    coinSound.play()
     gameStatus.innerHTML = "Click Play to start!"
     coinBal = parseInt(betAmt.value)
     balance.innerHTML = `Balance: ${coinBal} coins`
@@ -61,6 +65,8 @@ function confirm() {
 
 function playGame() {
   if (coinBal > 0) {
+    reelSound.volume = .20
+    reelSound.play()
     for (let i = 0; i < reels.length; i++) {
       reels[i].innerHTML = Math.floor(Math.random() * (max - min + 1) + min)
     } 
