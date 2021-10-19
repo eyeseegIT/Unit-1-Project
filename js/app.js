@@ -40,7 +40,7 @@ function init() {
   resetBtn.hidden = true
   betAmt.hidden = false
   confirmBtn.hidden = false
-  gameStatus.innerHTML = "Click Play to start!"
+  gameStatus.innerHTML = "Please input amount below"
   for (let i = 0; i < reels.length; i++) {
     reels[i].innerHTML = "7"
   }
@@ -48,6 +48,7 @@ function init() {
 }
 
 function confirm() {
+  gameStatus.innerHTML = "Click Play to start!"
   coinBal = parseInt(betAmt.value)
   balance.innerHTML = `Balance: ${coinBal} coins`
   betAmt.value = ""
@@ -63,7 +64,7 @@ function playGame() {
     } 
     checkWin()
   } else {
-    gameStatus.textContent = `You're broke! Come back next time!`
+    gameStatus.textContent = `You're broke! Try again!`
     resetBtn.hidden = false
     playBtn.hidden = true
   }
