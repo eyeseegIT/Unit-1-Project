@@ -8,7 +8,8 @@ const max = Math.floor(9)
 
 /*---------------------------- Variables (state) ----------------------------*/
 
-let coinBal = 10
+// let coinBal = 10
+let coinBal = 0
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -19,13 +20,17 @@ const playBtn = document.querySelector("#play-button")
 const lightDarkBtn = document.querySelector("#light-dark-button")
 const body = document.querySelector("body")
 const balance = document.querySelector("#balance")
+const betAmt = document.querySelector("#bet-amt")
+const confirmBtn = document.querySelector("#confirm-btn")
 
 /*----------------------------- Event Listeners -----------------------------*/
 
 // for(let i = 0; i <reels.length; i++){
 //   reels[i].addEventListener("click", playGame)
+// playBtn.addEventListener("click", playGame)
 playBtn.addEventListener("click", playGame)
 lightDarkBtn.addEventListener("click", toggleLightDark)
+confirmBtn.addEventListener("click", confirm)
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -39,6 +44,14 @@ function init() {
   }
   balance.innerHTML = `Balance: ${coinBal} Coins`
 }
+
+function confirm() {
+  coinBal = parseInt(betAmt.value)
+  balance.innerHTML = `Balance: ${coinBal} coins`
+  betAmt.value = ""
+  betAmt.hidden = true
+  confirmBtn.hidden = true
+  } 
 
 function playGame() {
   if (coinBal > 0) {

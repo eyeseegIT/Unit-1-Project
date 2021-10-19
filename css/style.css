@@ -57,7 +57,7 @@ h2 {
 
 div {
   border: 3px solid black;
-  font-size: 8vmin;
+  font-size: 20px;
   text-align: center;
   vertical-align: middle;
   justify-content: center;
@@ -110,6 +110,12 @@ div {
 
 #rules-button:hover > span {
   visibility: visible;
+}
+
+#bet-amt {
+  width: 200px;
+  margin: auto;
+
 }
 
 @media only screen and (min-width: 1024px) {

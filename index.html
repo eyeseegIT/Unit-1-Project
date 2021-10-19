@@ -11,7 +11,7 @@
 <body>
   <button id="light-dark-button" class="btn"></button>
 	<button id="rules-button" class="btn">Game Rules 
-		<span id="rulestext">Click play to start. Each play costs 1 credit.Winning gives you 5 credits. Once your balance reaches 0, it's game over!</span>
+		<span id="rulestext">Click play to start. Each play costs 1 coin. Winning gives you 5 coins. Once your balance reaches 0, it's game over!</span>
 	</button>
 	<h1>Slot Machine</h1>
 	<h2 id="message">Message</h2>
@@ -23,5 +23,8 @@
 	</section>    
 	<button id="play-button">Play</button>
 	<h3 id="balance">Balance</h3>
+
+	<input id="bet-amt" type="number" min="1" max="100" placeholder="Bet any amount between 1-100" required>
+	<button id="confirm-btn">Confirm</button>
 </body>
 </html>
