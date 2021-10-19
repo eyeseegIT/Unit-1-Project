@@ -40,7 +40,7 @@ function init() {
   resetBtn.hidden = true
   betAmt.hidden = false
   confirmBtn.hidden = false
-  gameStatus.innerHTML = "Please input amount below"
+  gameStatus.innerHTML = "How much will you lose?"
   for (let i = 0; i < reels.length; i++) {
     reels[i].innerHTML = "7"
   }
@@ -48,14 +48,16 @@ function init() {
 }
 
 function confirm() {
-  gameStatus.innerHTML = "Click Play to start!"
-  coinBal = parseInt(betAmt.value)
-  balance.innerHTML = `Balance: ${coinBal} coins`
-  betAmt.value = ""
-  betAmt.hidden = true
-  confirmBtn.hidden = true
-  playBtn.hidden = false
-  } 
+  if (betAmt.value !== "") {
+    gameStatus.innerHTML = "Click Play to start!"
+    coinBal = parseInt(betAmt.value)
+    balance.innerHTML = `Balance: ${coinBal} coins`
+    betAmt.value = ""
+    betAmt.hidden = true
+    confirmBtn.hidden = true
+    playBtn.hidden = false
+  }
+} 
 
 function playGame() {
   if (coinBal > 0) {
