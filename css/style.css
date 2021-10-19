@@ -72,7 +72,6 @@ div {
 
 #play-button {
   width: 100px;
-  display: inline-block;
   justify-content: center;
   background-color: var(--btn-bg-color);
   color: var(--btn-text-color);

@@ -8,7 +8,6 @@ const max = Math.floor(9)
 
 /*---------------------------- Variables (state) ----------------------------*/
 
-// let coinBal = 10
 let coinBal = 0
 
 /*------------------------ Cached Element References ------------------------*/
@@ -16,21 +15,20 @@ let coinBal = 0
 
 const reels = document.querySelectorAll(".reel")
 const gameStatus = document.querySelector("#message")
-const playBtn = document.querySelector("#play-button")
+const playBtn = document.querySelector("#play-btn")
 const lightDarkBtn = document.querySelector("#light-dark-button")
 const body = document.querySelector("body")
 const balance = document.querySelector("#balance")
 const betAmt = document.querySelector("#bet-amt")
 const confirmBtn = document.querySelector("#confirm-btn")
+const resetBtn = document.querySelector("#reset-btn")
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-// for(let i = 0; i <reels.length; i++){
-//   reels[i].addEventListener("click", playGame)
-// playBtn.addEventListener("click", playGame)
+confirmBtn.addEventListener("click", confirm)
 playBtn.addEventListener("click", playGame)
 lightDarkBtn.addEventListener("click", toggleLightDark)
-confirmBtn.addEventListener("click", confirm)
+resetBtn.addEventListener("click", init)
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -38,6 +36,10 @@ init()
 checkDarkPref()
 
 function init() {
+  playBtn.hidden = true
+  resetBtn.hidden = true
+  betAmt.hidden = false
+  confirmBtn.hidden = false
   gameStatus.innerHTML = "Click Play to start!"
   for (let i = 0; i < reels.length; i++) {
     reels[i].innerHTML = "7"
@@ -51,6 +53,7 @@ function confirm() {
   betAmt.value = ""
   betAmt.hidden = true
   confirmBtn.hidden = true
+  playBtn.hidden = false
   } 
 
 function playGame() {
@@ -61,6 +64,8 @@ function playGame() {
     checkWin()
   } else {
     gameStatus.textContent = `You're broke! Come back next time!`
+    resetBtn.hidden = false
+    playBtn.hidden = true
   }
 }
 
