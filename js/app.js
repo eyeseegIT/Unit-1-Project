@@ -72,14 +72,14 @@ function playGame() {
       { transform: 'translate3D(0, 20px, 0)' },
       { transform: 'translate3D(0, -20px, 0)' }, 
     ], {
-      duration: 1000,
+      duration: 500,
     })
     reel2.animate ([
       { filter: 'blur(30px)' },
       { transform: 'translate3D(0, -20px, 0)' },
       { transform: 'translate3D(0, 20px, 0)' }, 
     ], {
-      duration: 1000,
+      duration: 750,
     })
     reel3.animate ([
       { filter: 'blur(30px)' },
@@ -95,48 +95,13 @@ function playGame() {
         reels[i].innerHTML = Math.floor(Math.random() * (max - min + 1) + min)
       }
       checkWin()
-    } else {
+    }
+    if (coinBal === 0) {
       gameStatus.textContent = `You're broke! Try again!`
       resetBtn.hidden = false
       playBtn.hidden = true
     }
   }
-
-// function playGame() {
-//   if (coinBal > 0) {
-//     reelSound.volume = .20
-//     reelSound.play()
-//     for (let i = 0; i < reels.length; i++) {
-//       reels[i].innerHTML = Math.floor(Math.random() * (max - min + 1) + min)
-//       reel1.animate ([
-//         // { transform: 'translate3D(0, 0, 0)' }, 
-//         { transform: 'translate3D(0, -50px, 0)' },
-//         { filter: 'blur(10px)' }
-//       ], {
-//         duration: 1000,
-//       })
-//       reel2.animate ([
-//         // { transform: 'translate3D(0, 0, 0)' }, 
-//         { transform: 'translate3D(0, 50px, 0)' },
-//         { filter: 'blur(10px)' }
-//       ], {
-//         duration: 1000,
-//       })
-//       reel3.animate ([
-//         // { transform: 'translate3D(0, 0, 0)' }, 
-//         { transform: 'translate3D(0, -50px, 0)' },
-//         { filter: 'blur(10px)' }
-//       ], {
-//         duration: 1000,
-//       })
-//     } 
-//     checkWin()
-//   } else {
-//     gameStatus.textContent = `You're broke! Try again!`
-//     resetBtn.hidden = false
-//     playBtn.hidden = true
-//   }
-// }
 
 function checkWin() {
   for (let i = 0; i < winCond.length; i++) {
@@ -156,9 +121,7 @@ function checkWin() {
 }
 
 function lose() {
-  if (coinBal >= 1) {
-    coinBal--
-  }
+  coinBal--
 }
 
 function win() {
@@ -177,10 +140,3 @@ function checkDarkPref() {
     toggleLightDark()
   }
 }
-
-// document.getElementById("0").animate ([
-//   { transform: 'translate3D(0, 0, 0)' }, 
-//   { transform: 'translate3D(0, -300px, 0)' }
-// ], {
-//   duration: 2000,
-// })
