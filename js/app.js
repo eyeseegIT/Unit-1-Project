@@ -24,6 +24,9 @@ const confirmBtn = document.querySelector("#confirm-btn")
 const resetBtn = document.querySelector("#reset-btn")
 const coinSound = new Audio("../audio/coin.mp3")
 const reelSound = new Audio("../audio/reelplay.mp3")
+const reel1 = document.querySelector("#reel1")
+const reel2 = document.querySelector("#reel2")
+const reel3 = document.querySelector("#reel3")
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -64,19 +67,76 @@ function confirm() {
 } 
 
 function playGame() {
-  if (coinBal > 0) {
-    reelSound.volume = .20
-    reelSound.play()
-    for (let i = 0; i < reels.length; i++) {
-      reels[i].innerHTML = Math.floor(Math.random() * (max - min + 1) + min)
-    } 
-    checkWin()
-  } else {
-    gameStatus.textContent = `You're broke! Try again!`
-    resetBtn.hidden = false
-    playBtn.hidden = true
+    reel1.animate ([
+      { filter: 'blur(30px)' },
+      { transform: 'translate3D(0, 20px, 0)' },
+      { transform: 'translate3D(0, -20px, 0)' }, 
+    ], {
+      duration: 1000,
+    })
+    reel2.animate ([
+      { filter: 'blur(30px)' },
+      { transform: 'translate3D(0, -20px, 0)' },
+      { transform: 'translate3D(0, 20px, 0)' }, 
+    ], {
+      duration: 1000,
+    })
+    reel3.animate ([
+      { filter: 'blur(30px)' },
+      { transform: 'translate3D(0, 20px, 0)' },
+      { transform: 'translate3D(0, -20px, 0)' }, 
+    ], {
+      duration: 1000,
+    })
+    if (coinBal > 0) {
+      reelSound.volume = .20
+      reelSound.play()
+        for (let i = 0; i < reels.length; i++) {
+        reels[i].innerHTML = Math.floor(Math.random() * (max - min + 1) + min)
+      }
+      checkWin()
+    } else {
+      gameStatus.textContent = `You're broke! Try again!`
+      resetBtn.hidden = false
+      playBtn.hidden = true
+    }
   }
-}
+
+// function playGame() {
+//   if (coinBal > 0) {
+//     reelSound.volume = .20
+//     reelSound.play()
+//     for (let i = 0; i < reels.length; i++) {
+//       reels[i].innerHTML = Math.floor(Math.random() * (max - min + 1) + min)
+//       reel1.animate ([
+//         // { transform: 'translate3D(0, 0, 0)' }, 
+//         { transform: 'translate3D(0, -50px, 0)' },
+//         { filter: 'blur(10px)' }
+//       ], {
+//         duration: 1000,
+//       })
+//       reel2.animate ([
+//         // { transform: 'translate3D(0, 0, 0)' }, 
+//         { transform: 'translate3D(0, 50px, 0)' },
+//         { filter: 'blur(10px)' }
+//       ], {
+//         duration: 1000,
+//       })
+//       reel3.animate ([
+//         // { transform: 'translate3D(0, 0, 0)' }, 
+//         { transform: 'translate3D(0, -50px, 0)' },
+//         { filter: 'blur(10px)' }
+//       ], {
+//         duration: 1000,
+//       })
+//     } 
+//     checkWin()
+//   } else {
+//     gameStatus.textContent = `You're broke! Try again!`
+//     resetBtn.hidden = false
+//     playBtn.hidden = true
+//   }
+// }
 
 function checkWin() {
   for (let i = 0; i < winCond.length; i++) {
@@ -117,3 +177,10 @@ function checkDarkPref() {
     toggleLightDark()
   }
 }
+
+// document.getElementById("0").animate ([
+//   { transform: 'translate3D(0, 0, 0)' }, 
+//   { transform: 'translate3D(0, -300px, 0)' }
+// ], {
+//   duration: 2000,
+// })
