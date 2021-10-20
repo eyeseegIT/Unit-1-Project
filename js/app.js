@@ -24,6 +24,7 @@ const confirmBtn = document.querySelector("#confirm-btn")
 const resetBtn = document.querySelector("#reset-btn")
 const coinSound = new Audio("../audio/coin.mp3")
 const reelSound = new Audio("../audio/reelplay.mp3")
+const winSound = new Audio("../audio/win.wav")
 const reel1 = document.querySelector("#reel1")
 const reel2 = document.querySelector("#reel2")
 const reel3 = document.querySelector("#reel3")
@@ -63,8 +64,8 @@ function init() {
 
 function confirm() {
   if (betAmt.value !== "") {
-    // coinSound.volume = .20
-    // coinSound.play()
+    coinSound.volume = .20
+    coinSound.play()
     gameStatus.innerHTML = "Place a bet to start!"
     coinBal = parseInt(betAmt.value)
     balance.innerHTML = `Balance: ${coinBal} coins`
@@ -79,30 +80,30 @@ function confirm() {
 } 
 
 function playGame() {
-    // reel1.animate ([
-    //   { filter: 'blur(30px)' },
-    //   { transform: 'translate3D(0, 20px, 0)' },
-    //   { transform: 'translate3D(0, -20px, 0)' }, 
-    // ], {
-    //   duration: 500,
-    // })
-    // reel2.animate ([
-    //   { filter: 'blur(30px)' },
-    //   { transform: 'translate3D(0, -20px, 0)' },
-    //   { transform: 'translate3D(0, 20px, 0)' }, 
-    // ], {
-    //   duration: 750,
-    // })
-    // reel3.animate ([
-    //   { filter: 'blur(30px)' },
-    //   { transform: 'translate3D(0, 20px, 0)' },
-    //   { transform: 'translate3D(0, -20px, 0)' }, 
-    // ], {
-    //   duration: 1000,
-    // })
+    reel1.animate ([
+      { filter: 'blur(30px)' },
+      { transform: 'translate3D(0, 20px, 0)' },
+      { transform: 'translate3D(0, -20px, 0)' }, 
+    ], {
+      duration: 500,
+    })
+    reel2.animate ([
+      { filter: 'blur(30px)' },
+      { transform: 'translate3D(0, -20px, 0)' },
+      { transform: 'translate3D(0, 20px, 0)' }, 
+    ], {
+      duration: 750,
+    })
+    reel3.animate ([
+      { filter: 'blur(30px)' },
+      { transform: 'translate3D(0, 20px, 0)' },
+      { transform: 'translate3D(0, -20px, 0)' }, 
+    ], {
+      duration: 1000,
+    })
     if (coinBal > 0) {
-      // reelSound.volume = .20
-      // reelSound.play()
+      reelSound.volume = .20
+      reelSound.play()
         for (let i = 0; i < reels.length; i++) {
         reels[i].innerHTML = Math.floor(Math.random() * (max - min + 1) + min)
       }
@@ -110,6 +111,9 @@ function playGame() {
     }
     if (coinBal === 0) {
       gameStatus.textContent = `You're broke! Try again!`
+      bet1Btn.hidden = true
+      bet5Btn.hidden = true
+      bet10Btn.hidden = true
       resetBtn.hidden = false
       // playBtn.hidden = true
     }
@@ -121,27 +125,23 @@ function checkWin() {
     b = winCond[i][1]
     c = winCond[i][2]
     if (reels[a].innerHTML === reels[b].innerHTML && reels[b].innerHTML === reels[c].innerHTML) {
-      gameStatus.textContent = `You win!`
+      gameStatus.textContent = "Spinning..."
+      setTimeout(function() {
+        gameStatus.textContent = `You win!`
+        winSound.volume = .10
+        winSound.play()
+      }, 950)
       win()
       balance.innerHTML = `Balance: ${coinBal} coins`
     } else {
-      gameStatus.textContent = `You lose!`
+      gameStatus.textContent = "Spinning..."
+      setTimeout(function() {
+        gameStatus.textContent = `You lose!`
+      }, 950)
       lose()
       balance.innerHTML = `Balance: ${coinBal} coins`
     }
   } 
-}
-
-function lose() {
-  if (bet1Btn.clicked === true) {
-    coinBal-=1
-  } 
-  if (bet5Btn.clicked === true) {
-    coinBal-=5
-  } 
-  if (bet10Btn.clicked === true) {
-    coinBal-=10
-  }
 }
 
 function win() {
@@ -153,6 +153,18 @@ function win() {
   } 
   if (bet10Btn.clicked === true) {
     coinBal+=20
+  }
+}
+
+function lose() {
+  if (bet1Btn.clicked === true) {
+    coinBal-=1
+  } 
+  if (bet5Btn.clicked === true) {
+    coinBal-=5
+  } 
+  if (bet10Btn.clicked === true) {
+    coinBal-=10
   }
 }
 

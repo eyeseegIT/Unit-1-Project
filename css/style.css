@@ -108,13 +108,12 @@ h3 {
 }
 
 #reset-btn {
-  grid-area: play-btn;
+  grid-column: 2/3;
   width: 70px;
   height: 25px;
   justify-content: center;
   background-color: var(--btn-bg-color);
   color: var(--btn-text-color);
-  margin: auto;
 }
 
 #light-dark-button {
