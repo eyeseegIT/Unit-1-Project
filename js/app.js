@@ -121,7 +121,7 @@ function checkWin() {
 }
 
 function lose() {
-  coinBal--
+    coinBal--
 }
 
 function win() {
