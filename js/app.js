@@ -9,6 +9,7 @@ const max = Math.floor(9)
 /*---------------------------- Variables (state) ----------------------------*/
 
 let coinBal = 0
+let bet
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -64,8 +65,8 @@ function init() {
 
 function confirm() {
   if (betAmt.value !== "") {
-    coinSound.volume = .20
-    coinSound.play()
+    // coinSound.volume = .20
+    // coinSound.play()
     gameStatus.innerHTML = "Place a bet to start!"
     coinBal = parseInt(betAmt.value)
     balance.innerHTML = `Balance: ${coinBal} coins`
@@ -79,31 +80,36 @@ function confirm() {
   }
 } 
 
-function playGame() {
-    reel1.animate ([
-      { filter: 'blur(30px)' },
-      { transform: 'translate3D(0, 20px, 0)' },
-      { transform: 'translate3D(0, -20px, 0)' }, 
-    ], {
-      duration: 500,
-    })
-    reel2.animate ([
-      { filter: 'blur(30px)' },
-      { transform: 'translate3D(0, -20px, 0)' },
-      { transform: 'translate3D(0, 20px, 0)' }, 
-    ], {
-      duration: 750,
-    })
-    reel3.animate ([
-      { filter: 'blur(30px)' },
-      { transform: 'translate3D(0, 20px, 0)' },
-      { transform: 'translate3D(0, -20px, 0)' }, 
-    ], {
-      duration: 1000,
-    })
+function playGame(evt) {
+    // reel1.animate ([
+    //   { filter: 'blur(30px)' },
+    //   { transform: 'translate3D(0, 20px, 0)' },
+    //   { transform: 'translate3D(0, -20px, 0)' }, 
+    // ], {
+    //   duration: 500,
+    // })
+    // reel2.animate ([
+    //   { filter: 'blur(30px)' },
+    //   { transform: 'translate3D(0, -20px, 0)' },
+    //   { transform: 'translate3D(0, 20px, 0)' }, 
+    // ], {
+    //   duration: 750,
+    // })
+    // reel3.animate ([
+    //   { filter: 'blur(30px)' },
+    //   { transform: 'translate3D(0, 20px, 0)' },
+    //   { transform: 'translate3D(0, -20px, 0)' }, 
+    // ], {
+    //   duration: 1000,
+    // })
+    if (coinBal < parseInt(evt.target.id.slice(3))) {
+      return
+    }
+    console.log(parseInt(evt.target.id.slice(3)))
+    bet = evt.target.id
     if (coinBal > 0) {
-      reelSound.volume = .20
-      reelSound.play()
+      // reelSound.volume = .20
+      // reelSound.play()
         for (let i = 0; i < reels.length; i++) {
         reels[i].innerHTML = Math.floor(Math.random() * (max - min + 1) + min)
       }
@@ -128,43 +134,55 @@ function checkWin() {
       gameStatus.textContent = "Spinning..."
       setTimeout(function() {
         gameStatus.textContent = `You win!`
-        winSound.volume = .10
-        winSound.play()
+        // winSound.volume = .10
+        // winSound.play()
       }, 950)
       win()
-      balance.innerHTML = `Balance: ${coinBal} coins`
+      // balance.innerHTML = `Balance: ${coinBal} coins`
     } else {
       gameStatus.textContent = "Spinning..."
       setTimeout(function() {
         gameStatus.textContent = `You lose!`
       }, 950)
       lose()
-      balance.innerHTML = `Balance: ${coinBal} coins`
+      // balance.innerHTML = `Balance: ${coinBal} coins`
     }
   } 
 }
 
 function win() {
-  if (bet1Btn.clicked === true) {
+  if (bet === "bet1") {
+    console.log("bet 1 clicked")
     coinBal+=2
   } 
-  if (bet5Btn.clicked === true) {
+  if (bet === "bet5") {
     coinBal+=8
   } 
-  if (bet10Btn.clicked === true) {
+  if (bet === "bet10") {
     coinBal+=20
   }
+  render()
 }
 
 function lose() {
-  if (bet1Btn.clicked === true) {
+  if (bet === "bet1") {
     coinBal-=1
   } 
-  if (bet5Btn.clicked === true) {
+  if (bet === "bet5") {
     coinBal-=5
   } 
-  if (bet10Btn.clicked === true) {
+  if (bet === "bet10") {
     coinBal-=10
+  }
+  render()
+}
+
+function render() {
+  if (coinBal >= 0) {
+    balance.innerHTML = `Balance: ${coinBal} coins`
+  } else {
+    gameStatus.innerHTML = `You're broke!`
+    balance.innerHTML = `Balance: 0 coins`
   }
 }
 
