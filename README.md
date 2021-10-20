@@ -1,4 +1,4 @@
-# Unit 1 Project- The Slots
+# Unit 1 Project- The Number Slots
 
 Bringing a casino classic to you. Play the game <a href="https://unit-1-slot-machine.netlify.app">here</a>! 
 
