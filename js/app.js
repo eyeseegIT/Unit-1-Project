@@ -112,7 +112,9 @@ function playGame(evt) {
       checkWin()
     }
     if (coinBal === 0) {
+      setTimeout(function() {
       gameStatus.textContent = `You're broke! Try again!`
+      }, 950)
       bet1Btn.hidden = true
       bet5Btn.hidden = true
       bet10Btn.hidden = true
@@ -175,10 +177,10 @@ function lose() {
 function render() {
   if (coinBal >= 0) {
     balance.innerHTML = `Balance: ${coinBal} coins`
-  } else {
-    gameStatus.innerHTML = `You're broke!`
-    balance.innerHTML = `Balance: 0 coins`
-  }
+  } // else {
+    // gameStatus.innerHTML = `You're broke!`
+    // balance.innerHTML = `Balance: 0 coins`
+  // }
 }
 
 function toggleLightDark() {
