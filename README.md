@@ -1,6 +1,8 @@
 # Unit 1 Project- The Number Slots
 
-Bringing a casino classic to you. Play the game <a href="https://unit-1-slot-machine.netlify.app" rel="noopener noreferrer" target="_blank">here</a>! 
+A casino classic. Same look. Same feel. Same winning odds. 
+
+Play the game <a href="https://unit-1-slot-machine.netlify.app" rel="noopener noreferrer" target="_blank">here</a>! 
 
 # Rules of the Game:
 1) Input amount of coins (from 1 to 100) you have to play with.
@@ -18,7 +20,7 @@ Bringing a casino classic to you. Play the game <a href="https://unit-1-slot-mac
 
 
 # Screenshots
-<img src="">
+<img src="./images/screenshot.png">
 
 # Technologies Used
 <ul>
