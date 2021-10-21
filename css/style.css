@@ -1,11 +1,11 @@
 body {
   --body-bg: white;
-  --btn-text-color: black;
-  --btn-bg-color: gold;
-  --light-dark-btn-bg: blue;
+  --btn-text-color: white;
+  --btn-bg-color: #FF3B4F;
+  --light-dark-btn-bg: #004F6E;
   --light-dark-btn-color: white;
-  --light-dark-btn-content: "Dark Mode";
-  --rules-btn-bg-color: green;
+  --light-dark-btn-content: "Dark Mode 🌙";
+  --rules-btn-bg-color: blue;
   --rules-btn-bg-text-color: white;
   --hover-box-bg-color: black;
   --hover-box-text-color: white;
@@ -27,12 +27,12 @@ body.dark {
   --body-bg: #22232b;
   --btn-text-color: white;
   --btn-bg-color: gray;
-  --light-dark-btn-bg: green;
-  --color: white;
-  --light-dark-btn-content: "Light Mode";
+  --light-dark-btn-bg: #798897;
+  --light-dark-btn-color: black;
+  --light-dark-btn-content: "Light Mode ☀️";
   --text-color: white;
-  --rules-btn-bg-color: blue;
-  --rules-btn-bg-text-color: white;
+  --rules-btn-bg-color: #0086E5;
+  --rules-btn-bg-text-color: black;
   --hover-box-bg-color: white;
   --hover-box-text-color: black;
 }
@@ -62,7 +62,6 @@ h2 {
   "start start start";
   font-size: 50px;
   text-align: center;
-  margin-top: 50px;
   background-image: url("https://i.postimg.cc/cCgz5zh0/slot.png");
   background-repeat: no-repeat;
   background-position: center center;
@@ -153,27 +152,27 @@ h2 {
   border-radius: 8px;
 }
 
-#light-dark-button {
+#light-dark-btn {
   background-color: var(--light-dark-btn-bg); 
   color: var(--light-dark-btn-color);
   width: 100px;
   height: 25px;
 }
 
-#light-dark-button::after {
+#light-dark-btn::after {
   content: var(--light-dark-btn-content);
 } 
 
-#rules-button {
+#rules-btn {
   width: 100px;
   height: 25px;
   background-color: var(--rules-btn-bg-color); 
   color: var(--rules-btn-bg-text-color);
 }
 
-#rules-button > span {
+#rules-btn > span {
   visibility: hidden;
-  width: 200px;
+  width: 300px;
   background-color: var(--hover-box-bg-color);
   color: var(--hover-box-text-color);
   padding: 5px 0;
@@ -182,14 +181,6 @@ h2 {
   z-index: 1;
 }
 
-#rules-button:hover > span {
+#rules-btn:hover > span {
   visibility: visible;
 }
-
-/* @media only screen and (min-width: 1024px) {
-  
-} */
-
-/* @media only screen and (min-width: 768px) {
-  
-} */

@@ -16,7 +16,7 @@ let bet
 
 const reels = document.querySelectorAll(".reel")
 const gameStatus = document.querySelector("#message")
-const lightDarkBtn = document.querySelector("#light-dark-button")
+const lightDarkBtn = document.querySelector("#light-dark-btn")
 const body = document.querySelector("body")
 const balance = document.querySelector("#balance")
 const betAmt = document.querySelector("#bet-amt")
