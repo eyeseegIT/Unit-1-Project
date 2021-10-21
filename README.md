@@ -14,8 +14,8 @@ Play the game <a href="https://unit-1-slot-machine.netlify.app" rel="noopener no
 **Payout**:
   <ul>
     <li>Betting 1 coin, wins 2 </li>
-    <li>Betting 5 coins, wins 8 </li>
-    <li>Betting 10 coins, wins 20</li>
+    <li>Betting 5 coins, wins 11 </li>
+    <li>Betting 10 coins, wins 25</li>
   </ul>
 
 
@@ -39,5 +39,6 @@ Fonts: <a href="https://fonts.google.com/" rel="noopener noreferrer" target="_bl
 # Next Steps
 <ul>
   <li>Add scoreboard</li>
+  <li>Add Bitcoin wallet integration</li>
 </ul>
 

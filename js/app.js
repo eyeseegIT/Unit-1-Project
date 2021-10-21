@@ -166,10 +166,10 @@ function win() {
     coinBal+=2
   } 
   if (bet === "bet5") {
-    coinBal+=8
+    coinBal+=11
   } 
   if (bet === "bet10") {
-    coinBal+=20
+    coinBal+=25
   }
   setTimeout(function() { 
   render()
