@@ -40,18 +40,14 @@ body.dark {
 h1 {
   text-align: center;
   color: var(--text-color);
+  font-size: 60px;
 }
 
 h2 {
   text-align: center;
   margin: 110px; 
-  font-size: 20px;
-}
-
-h3 {
-  text-align: center;
-  margin: auto; 
-  font-size: 20px;
+  font-size: 30px;
+  padding-top: 10px;
 }
 
 .slot {
@@ -100,17 +96,21 @@ h3 {
   grid-area: balance;
   color: white;
   text-align: center;
+  font-size: 25px;
+  font-weight: bold;
   margin: auto;
   width: 100%;
-  padding-top: 75px;
+  padding-top: 80px;
 }
 
 .bet-btn {
-  width: 70px;
+  width: 80px;
   height: 25px;
   background-color: var(--btn-bg-color);
   color: var(--btn-text-color);
   margin-top: 40px;
+  font-family: 'IM Fell English SC', serif;
+  font-size: 15px;
 }
 
 #start-amt {
@@ -123,11 +123,13 @@ h3 {
 }
 
 #confirm-btn {
-  width: 70px;
-  height: 25px;
+  width: 90px;
+  height: 30px;
   background-color: var(--btn-bg-color);
   color: var(--btn-text-color);
   border-radius: 8px;
+  font-family: 'IM Fell English SC', serif;
+  font-size: 20px;
 }
 
 #set-bet-btns {
@@ -140,11 +142,13 @@ h3 {
 
 #reset-btn {
   grid-column: 2/3;
-  width: 70px;
-  height: 25px;
+  width: 90px;
+  height: 30px;
   justify-content: center;
   background-color: var(--btn-bg-color);
   color: var(--btn-text-color);
+  font-family: 'IM Fell English SC', serif;
+  font-size: 20px;
   margin-top: 37px;
   border-radius: 8px;
 }
@@ -165,7 +169,6 @@ h3 {
   height: 25px;
   background-color: var(--rules-btn-bg-color); 
   color: var(--rules-btn-bg-text-color);
-  
 }
 
 #rules-button > span {
