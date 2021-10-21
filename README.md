@@ -18,16 +18,24 @@ Bringing a casino classic to you. Play the game <a href="https://unit-1-slot-mac
 
 
 # Screenshots
+<img src="">
 
 # Technologies Used
 <ul>
   <li>HTML</li>
   <li>CSS</li>
   <li>Javascript</li>
-  <li>Animate.css</li>
 </ul>
 
 # Credits
 Background image: <a href="https://stock.adobe.com/sk/search/images?k=slot+machine+blank" rel="noopener noreferrer" target="_blank">Adobe Stock</a>
 <br>
 Audio: <a href="https://quicksounds.com/library/sounds/slot-machine" rel="noopener noreferrer" target="_blank">Quick Sounds</a>
+<br>
+Fonts: <a href="https://fonts.google.com/" rel="noopener noreferrer" target="_blank">Google Fonts</a>
+
+# Next Steps
+<ul>
+  <li>Add scoreboard</li>
+</ul>
+
