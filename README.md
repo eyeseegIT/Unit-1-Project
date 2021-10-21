@@ -1,6 +1,6 @@
 # Unit 1 Project- The Number Slots
 
-A casino classic. Same look. Same feel. Same winning odds. 
+A casino classic. Same look. Same feel. Same winning (or losing) odds. 
 
 Play the game <a href="https://unit-1-slot-machine.netlify.app" rel="noopener noreferrer" target="_blank">here</a>! 
 
