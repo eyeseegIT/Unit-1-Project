@@ -56,28 +56,27 @@ h3 {
 
 .slot {
   display: grid;
-  grid-template-rows: repeat(4, 25%);
+  grid-template-rows: 25% 25% 25% 15% 10%;
   grid-template-columns: repeat(3, 33%);
   grid-template-areas:
   "msg msg msg"
   "reel reel reel"
   "balance balance balance"
-  "startAmt startAmt startAmt";
+  "bet bet bet"
+  "start start start";
   font-size: 50px;
   text-align: center;
-  border: 1px solid green;
   margin-top: 50px;
   background-image: url("https://i.postimg.cc/cCgz5zh0/slot.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 100%;
-  width: 400px;
-  height: 400px;
+  width: 450px;
+  height: 450px;
 }
 
 #message {
   grid-area: msg;
-  border: 1px solid red;
   width: 100%;
   margin: 0%;
   display: flex;
@@ -85,9 +84,16 @@ h3 {
   justify-content: center;
 }
 
-.reel {
-  border: 3px solid orange;
-  grid-area: auto;
+#reel1 {
+  padding: 70px 0px 0px 110px; 
+}
+
+#reel2 {
+  padding: 70px 0px 0px 0px; 
+}
+
+#reel3 {
+  padding: 70px 100px 0px 0px; 
 }
 
 #balance {
@@ -95,38 +101,37 @@ h3 {
   color: white;
   text-align: center;
   margin: auto;
-  border: 1px solid purple;
   width: 100%;
   padding-top: 75px;
 }
 
-.betBtn {
-  width: 100px;
+.bet-btn {
+  width: 60px;
   height: 25px;
+  margin-top: 40px;
 }
 
-#startAmt {
-  grid-area: startAmt;
-  border: 1px solid black;
-  width: 100%;
+#start-amt {
+  grid-area: start;
 }
 
 #bet-amt {
-  grid-area: bet-amt;
   width: 180px;
   height: 20px;
-  justify-content: center;
-  margin: auto;
 }
 
-#confirm-btn {
-  grid-area: confirm-btn;
+/* #confirm-btn {
+  grid-area: confirm;
   width: 70px;
   height: 25px;
   justify-content: center;
   background-color: var(--btn-bg-color);
   color: var(--btn-text-color);
   margin: auto;
+} */
+
+#set-bet-btns {
+  grid-area: bet;
 }
 
 #reset-btn {
@@ -136,6 +141,7 @@ h3 {
   justify-content: center;
   background-color: var(--btn-bg-color);
   color: var(--btn-text-color);
+  margin-top: 37px;
 }
 
 #light-dark-button {
@@ -154,6 +160,7 @@ h3 {
   height: 25px;
   background-color: var(--rules-btn-bg-color); 
   color: var(--rules-btn-bg-text-color);
+  
 }
 
 #rules-button > span {
@@ -177,30 +184,4 @@ h3 {
 
 /* @media only screen and (min-width: 768px) {
   
-} */
-
-/* @media only screen and (max-width: 600px) {
-  h2 {
-    text-align: center;
-    margin: ; 
-    font-size: 20px;
-  }
-  
-  h3 {
-    text-align: center;
-    margin: auto; 
-    font-size: 20px;
-  }
-  
-  .slot {
-    display: grid;
-    grid-template-rows: repeat(3, 100px);
-    grid-template-columns: repeat(3, 100px);
-    grid-template-areas:
-    "0 1 2"
-    "balance balance balance"
-    "bet-amt bet-amt confirm-btn";
-    font-size: 50px;
-    text-align: center;
-  }
 } */
