@@ -127,10 +127,15 @@ h3 {
   height: 25px;
   background-color: var(--btn-bg-color);
   color: var(--btn-text-color);
+  border-radius: 8px;
 }
 
 #set-bet-btns {
   grid-area: bet;
+}
+
+.bet-btn {
+  border-radius: 8px;
 }
 
 #reset-btn {
@@ -141,6 +146,7 @@ h3 {
   background-color: var(--btn-bg-color);
   color: var(--btn-text-color);
   margin-top: 37px;
+  border-radius: 8px;
 }
 
 #light-dark-button {
