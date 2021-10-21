@@ -62,8 +62,8 @@ function init() {
 
 function confirm() {
   if (betAmt.value !== "") {
-    // coinSound.volume = .20
-    // coinSound.play()
+    coinSound.volume = .20
+    coinSound.play()
     gameStatus.innerHTML = "Place a bet to start!"
     coinBal = parseInt(betAmt.value)
     balance.innerHTML = `Balance: ${coinBal} coins`
