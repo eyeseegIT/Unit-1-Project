@@ -45,9 +45,7 @@ h1 {
 
 h2 {
   text-align: center;
-  margin: 110px; 
   font-size: 30px;
-  padding-top: 10px;
 }
 
 .slot {
@@ -73,7 +71,6 @@ h2 {
 #message {
   grid-area: msg;
   width: 100%;
-  margin: 0%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,7 +95,6 @@ h2 {
   font-size: 25px;
   font-weight: bold;
   margin: auto;
-  width: 100%;
   padding-top: 80px;
 }
 
@@ -143,7 +139,6 @@ h2 {
   grid-column: 2/3;
   width: 90px;
   height: 30px;
-  justify-content: center;
   background-color: var(--btn-bg-color);
   color: var(--btn-text-color);
   font-family: 'IM Fell English SC', serif;
