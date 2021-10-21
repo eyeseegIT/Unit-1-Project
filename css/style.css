@@ -1,7 +1,7 @@
 body {
   --body-bg: white;
   --btn-text-color: black;
-  --btn-bg-color: silver;
+  --btn-bg-color: gold;
   --light-dark-btn-bg: blue;
   --light-dark-btn-color: white;
   --light-dark-btn-content: "Dark Mode";
@@ -25,8 +25,8 @@ body {
 
 body.dark {
   --body-bg: #22232b;
-  --btn-text-color: black;
-  --btn-bg-color: silver;
+  --btn-text-color: white;
+  --btn-bg-color: gray;
   --light-dark-btn-bg: green;
   --color: white;
   --light-dark-btn-content: "Light Mode";
@@ -93,7 +93,7 @@ h3 {
 }
 
 #reel3 {
-  padding: 70px 100px 0px 0px; 
+  padding: 70px 110px 0px 0px; 
 }
 
 #balance {
@@ -106,8 +106,10 @@ h3 {
 }
 
 .bet-btn {
-  width: 60px;
+  width: 70px;
   height: 25px;
+  background-color: var(--btn-bg-color);
+  color: var(--btn-text-color);
   margin-top: 40px;
 }
 
@@ -120,15 +122,12 @@ h3 {
   height: 20px;
 }
 
-/* #confirm-btn {
-  grid-area: confirm;
+#confirm-btn {
   width: 70px;
   height: 25px;
-  justify-content: center;
   background-color: var(--btn-bg-color);
   color: var(--btn-text-color);
-  margin: auto;
-} */
+}
 
 #set-bet-btns {
   grid-area: bet;

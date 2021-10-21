@@ -16,7 +16,6 @@ let bet
 
 const reels = document.querySelectorAll(".reel")
 const gameStatus = document.querySelector("#message")
-// const playBtn = document.querySelector("#play-btn")
 const lightDarkBtn = document.querySelector("#light-dark-button")
 const body = document.querySelector("body")
 const balance = document.querySelector("#balance")
@@ -36,7 +35,6 @@ const bet10Btn = document.querySelector("#bet10")
 /*----------------------------- Event Listeners -----------------------------*/
 
 confirmBtn.addEventListener("click", confirm)
-// playBtn.addEventListener("click", playGame)
 lightDarkBtn.addEventListener("click", toggleLightDark)
 resetBtn.addEventListener("click", init)
 bet1Btn.addEventListener("click", playGame)
@@ -49,7 +47,6 @@ init()
 checkDarkPref()
 
 function init() {
-  // playBtn.hidden = true
   resetBtn.hidden = true
   betAmt.hidden = false
   confirmBtn.hidden = false
@@ -76,40 +73,39 @@ function confirm() {
     bet1Btn.hidden = false
     bet5Btn.hidden = false
     bet10Btn.hidden = false
-    // playBtn.hidden = false
   }
 } 
 
 function playGame(evt) {
-    // reel1.animate ([
-    //   { filter: 'blur(30px)' },
-    //   { transform: 'translate3D(0, 20px, 0)' },
-    //   { transform: 'translate3D(0, -20px, 0)' }, 
-    // ], {
-    //   duration: 500,
-    // })
-    // reel2.animate ([
-    //   { filter: 'blur(30px)' },
-    //   { transform: 'translate3D(0, -20px, 0)' },
-    //   { transform: 'translate3D(0, 20px, 0)' }, 
-    // ], {
-    //   duration: 750,
-    // })
-    // reel3.animate ([
-    //   { filter: 'blur(30px)' },
-    //   { transform: 'translate3D(0, 20px, 0)' },
-    //   { transform: 'translate3D(0, -20px, 0)' }, 
-    // ], {
-    //   duration: 1000,
-    // })
     if (coinBal < parseInt(evt.target.id.slice(3))) {
+      gameStatus.innerHTML = "Not enough coins!"
       return
     }
-    console.log(parseInt(evt.target.id.slice(3)))
     bet = evt.target.id
     if (coinBal > 0) {
-      // reelSound.volume = .20
-      // reelSound.play()
+      reel1.animate ([
+        { filter: 'blur(30px)' },
+        { transform: 'translate3D(0, 20px, 0)' },
+        { transform: 'translate3D(0, -20px, 0)' }, 
+      ], {
+        duration: 500,
+      })
+      reel2.animate ([
+        { filter: 'blur(30px)' },
+        { transform: 'translate3D(0, -20px, 0)' },
+        { transform: 'translate3D(0, 20px, 0)' }, 
+      ], {
+        duration: 750,
+      })
+      reel3.animate ([
+        { filter: 'blur(30px)' },
+        { transform: 'translate3D(0, 20px, 0)' },
+        { transform: 'translate3D(0, -20px, 0)' }, 
+      ], {
+        duration: 1000,
+      })
+      reelSound.volume = .20
+      reelSound.play()
         for (let i = 0; i < reels.length; i++) {
         reels[i].innerHTML = Math.floor(Math.random() * (max - min + 1) + min)
       }
@@ -121,7 +117,6 @@ function playGame(evt) {
       bet5Btn.hidden = true
       bet10Btn.hidden = true
       resetBtn.hidden = false
-      // playBtn.hidden = true
     }
   }
 
@@ -134,25 +129,25 @@ function checkWin() {
       gameStatus.textContent = "Spinning..."
       setTimeout(function() {
         gameStatus.textContent = `You win!`
-        // winSound.volume = .10
-        // winSound.play()
+        winSound.volume = .10
+        winSound.play()
       }, 950)
       win()
-      // balance.innerHTML = `Balance: ${coinBal} coins`
     } else {
       gameStatus.textContent = "Spinning..."
       setTimeout(function() {
+        if (coinBal === 0) {
+          return
+        } else {
         gameStatus.textContent = `You lose!`
-      }, 950)
+      }}, 950)
       lose()
-      // balance.innerHTML = `Balance: ${coinBal} coins`
     }
   } 
 }
 
 function win() {
   if (bet === "bet1") {
-    console.log("bet 1 clicked")
     coinBal+=2
   } 
   if (bet === "bet5") {
@@ -185,14 +180,6 @@ function render() {
     balance.innerHTML = `Balance: 0 coins`
   }
 }
-
-// function lose() {
-//   coinBal--
-// }
-
-// function win() {
-//   coinBal+=5
-// }
 
 function toggleLightDark() {
   body.className = body.className === "dark" ? "" : "dark"
