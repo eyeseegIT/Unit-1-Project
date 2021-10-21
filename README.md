@@ -39,6 +39,7 @@ Fonts: <a href="https://fonts.google.com/" rel="noopener noreferrer" target="_bl
 # Next Steps
 <ul>
   <li>Add scoreboard</li>
+  <li>Add bonus rounds</li>
   <li>Add Bitcoin wallet integration</li>
 </ul>
 
