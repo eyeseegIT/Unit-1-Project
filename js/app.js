@@ -109,6 +109,7 @@ function playGame(evt) {
         for (let i = 0; i < reels.length; i++) {
         reels[i].innerHTML = Math.floor(Math.random() * (max - min + 1) + min)
       }
+      lose()
       checkWin()
     }
     if (coinBal === 0) {
@@ -143,9 +144,21 @@ function checkWin() {
         } else {
         gameStatus.textContent = `You lose!`
       }}, 950)
-      lose()
     }
   } 
+}
+
+function lose() {
+  if (bet === "bet1") {
+    coinBal-=1
+  } 
+  if (bet === "bet5") {
+    coinBal-=5
+  } 
+  if (bet === "bet10") {
+    coinBal-=10
+  }
+  render()
 }
 
 function win() {
@@ -161,19 +174,6 @@ function win() {
   setTimeout(function() { 
   render()
   }, 950)
-}
-
-function lose() {
-  if (bet === "bet1") {
-    coinBal-=1
-  } 
-  if (bet === "bet5") {
-    coinBal-=5
-  } 
-  if (bet === "bet10") {
-    coinBal-=10
-  }
-  render()
 }
 
 function render() {
