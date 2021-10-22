@@ -21,6 +21,7 @@ Play the game <a href="https://the-number-slots.netlify.app" rel="noopener noref
 
 # Screenshots
 <img src="./images/screenshot.png">
+<img src="./images/screenshot2.png">
 
 # Technologies Used
 <ul>
